@@ -1,0 +1,41 @@
+<header layout:fragment="header"
+        xmlns:layout="http://www.w3.org/1999/xhtml"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                                    aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/car/">Amazon</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/car/listForSale">Available Cars</a></li>
+                    <li><a href="/car/listNotForSale">UnAvailable Cars</a></li>
+                    <li><a href="/user/list">Users</a></li>
+                    <li><a href="/car/addInventoryOrder">Inventory Order</a></li>
+                    <li><a href="/car/updateParameters">Update Parameters</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active" sec:authorize="isAuthenticated()">
+                        <a href="/auth/logout">Logout <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li>
+                        <a href="/auth/loginPage">Login</a>
+                    </li>
+                    <li sec:authorize="!isAuthenticated()">
+                        <a href="/auth/register">Register</a>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+</header>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{Shared/main_layout}">
+<head>
+    <title>Users List</title>
+</head>
+<body>
+<div layout:fragment="content" class="row">
+    <div class="col-md-1"></div>
+    <div class="col-xs-10 col-md-10">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-5">
+                <h2>Users List</h2>
+            </div>
+            <div class="col-md-1">
+                <h2>
+                    <a href="/user/register" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign"></span> Add User</a>
+                </h2>
+            </div>
+        </div>
+            <div class="col-md-12">
+                <div class="table">
+                    <table class="table table-hover" id="product-table">
+                        <thead>
+                            <tr>
+                                <th>User Name</th>
+                                <th>Email</th>
+                                <th>Hashed Password</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="user : ${Users}">
+                                <td th:text="${user.userName}"></td>
+                                <td th:text="${user.email}"></td>
+                                <td th:text="${user.hashedPassword}"></td>
+                                <td><a th:href="@{'/user/edit/' + ${user.id}}" class="btn btn-primary">Edit</a></td>
+                                <td><a th:href="@{'/user/delete/' + ${user.id}}" class="btn btn-primary">Delete</a></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</div>
+</body>
+</html>

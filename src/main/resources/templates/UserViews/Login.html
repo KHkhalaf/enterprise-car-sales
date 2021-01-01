@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{Shared/main_layout}">
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+</head>
+<body>
+<div layout:fragment="content" align="center">
+    <h1>Login</h1>
+    <br />
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form id="loginForm">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label">Email:</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input id="email" type="email" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label">Password:</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input id="password" type="password" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary"> Login</button>
+                </div>
+                <div class="form-group">
+                    <a href="/auth/register">register now if you don't have an account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

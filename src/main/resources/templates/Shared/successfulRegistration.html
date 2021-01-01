@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{Shared/main_layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Success</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h1>
+        <center>
+            <span th:text="'A verification email has been sent to: ' + ${emailId}"></span>
+        </center>
+    </h1>
+</div>
+</body>
+</html>

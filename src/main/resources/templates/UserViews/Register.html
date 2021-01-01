@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{Shared/main_layout}">
+<head>
+    <meta charset="utf-8" />
+    <title>Create New Account</title>
+</head>
+<body>
+<div layout:fragment="content" align="center">
+    <h1>Create New Account</h1>
+    <br />
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form action="#" th:action="@{/auth/registerUser}" th:object="${user}"
+                  method="post">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label">User Name:</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input type="text" class="form-control" th:field="*{userName}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label">Email:</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input type="email" class="form-control" th:field="*{email}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label">Password:</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input type="password" class="form-control" th:field="*{hashedPassword}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label">Registration type:</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <select id="type" th:field="*{type}" class="form-control">
+                                <option value="USER">USER</option>
+                                <option value="BUYER">BUYER</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary"> Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

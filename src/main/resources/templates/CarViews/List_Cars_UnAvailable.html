@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{Shared/main_layout}">
+<head>
+    <title>Cars List</title>
+</head>
+<body>
+<div layout:fragment="content" class="row">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-5">
+            <h2>UnAvailable Cars</h2>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-12">
+        <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="product-table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Car Name</th>
+                                <th>Price</th>
+                                <th>Number Of Seats</th>
+                                <th>Sale Price</th>
+                                <th>Sale Date</th>
+                                <th>Buyer Name</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="car : ${Cars}">
+                                <td th:text="${car.name}"></td>
+                                <td th:text="${car.Price}"></td>
+                                <td th:text="${car.numberOfSeats}"></td>
+                                <td th:text="${car.salePrice}"></td>
+                                <td th:text="${car.saleDate}"></td>
+                                <td th:text="${car.buyerName}"></td>
+                                <td><a th:href="@{'/car/delete/' + ${car.id}}" class="btn btn-danger">Delete</a></td>
+                                <td><a th:href="@{'/car/details/' + ${car.id}}" class="btn btn-default">Details</a></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

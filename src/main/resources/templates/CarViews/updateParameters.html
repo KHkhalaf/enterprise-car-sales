@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{Shared/main_layout}">
+<head>
+    <meta charset="utf-8" />
+    <title>Update Parameters</title>
+</head>
+<body>
+<div layout:fragment="content" align="center">
+    <h1>Update Parameters</h1>
+    <br />
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+    <form action="#" th:action="@{/car/saveParameters}" th:object="${parametersDto}"
+          method="post">
+        <div class="row">
+            <div class="col-md-3">
+                <label class="control-label">Number Of Seats:</label>
+            </div>
+            <div class="col-md-9">
+                <div class="form-group">
+                    <input type="number" class="form-control" th:field="*{numberOfSeats}"/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label class="control-label">Profit Ratio:</label>
+            </div>
+            <div class="col-md-9">
+                <div class="form-group">
+                    <input type="text" class="form-control" th:field="*{profitRatio}"/>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary"> Save</button>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+</body>
+</html>
